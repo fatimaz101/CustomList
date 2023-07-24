@@ -9,16 +9,41 @@ namespace CustomList
     public class CustomList<T>
     {
         //Member Variables (HAS A)
-        private T[] items;
+        public T[] items;
         private int capacity;
         private int count;
+        public int Capacity
+        {
+            get
+            {
+                return capacity;
+            }
+            set
+            {
+                capacity = value;
+            }
+        }
+
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+            set
+            {
+                count = value;
+            }
+        }
 
         //Constructor
         public CustomList()
         {
-            //capacity = 
-            //count =
-            //items = 
+            capacity = 4;
+            count = 0;
+
+            items = new T[capacity];
+            
         }
 
         //Member Methods (CAN DO)
@@ -27,6 +52,31 @@ namespace CustomList
             //'item' parameter should be added to internal 'items' array
             //if items array is at capacity, double capacity and create new array
             //transfer all items to new array
+
+
+            //Count = items.Count;
+            if (count >= Capacity)
+            {
+                Capacity = capacity * 2;
+               
+                T[] newItems = items;
+                Array.Resize<T>(ref items, capacity);
+                Array.Copy(items, newItems, Count);
+
+                items[count] = item;
+               
+                count++;
+
+
+            }
+            else if (count < Capacity)
+            {
+                items[count] = item;
+                count++;
+
+            }
+            
+            
         }
 
         public bool Remove(T item)

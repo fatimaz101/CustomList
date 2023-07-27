@@ -84,7 +84,64 @@ namespace CustomList
             //If 'item' exists in the 'items' array, remove its first instance
             //Any items coming after the removed item should be shifted down so there is no empty index.
             //If 'item' was removed, return true. If no item was removed, return false.
-            return false;
+
+            int index = Array.IndexOf(items, item);
+
+
+            int checkPoint = Count - index;
+
+
+            if (items.Contains(item) == true)//checks whether item exists in array
+                {
+
+
+                 
+
+
+                    for (int i = 0; i < checkPoint; i++)
+                    {
+
+
+                    if (i != (checkPoint - 1))
+                        {
+
+                            items[index] = items[index + 1];
+                        }else if(i == (checkPoint-1))
+                        {
+
+                            items[index] = default(T);
+                        }
+
+
+                    index++;
+
+                    }
+
+
+
+                   count--;
+                   return true;
+
+
+
+                }else if (items.Contains(item) == false)
+                {
+
+
+                Console.WriteLine("Item doesnt exist in your List.");
+                return false;
+
+                  }
+                else
+                {
+                Console.WriteLine("Fail");
+                return false;
+                }
+                
+
+
+
+
         }
 
         public override string ToString()
@@ -104,6 +161,10 @@ namespace CustomList
             //returns a single CustomList<T> with all items from firstList, EXCEPT any items that also appear in secondList
             return null;
         }
+
+        
+       
+        
 
 
     }

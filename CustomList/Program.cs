@@ -5,17 +5,17 @@
         static void Main(string[] args)
         {
             CustomList<string> myList = new CustomList<string>();
+            myList.Add("Fatima");
+            myList.Add("is");
+            myList.Add("dazzling!");
+
 
 
             //Act
-            myList.Add("hey");
-            myList.Add("hey");
-            myList.Add("hey");
-            myList.Add("hey");
-            myList.Add("hey");
-            myList.Add("hey");
-            myList.Remove("hey");
-            Console.WriteLine($"{myList.items[5]}");
+            string result = myList.ToString();
+
+
+            Console.WriteLine($"{result}");
 
         }
     }

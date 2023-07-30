@@ -36,6 +36,39 @@ namespace CustomList
             }
         }
 
+        public T this[int index]
+        {
+
+
+            get
+            {
+                
+                    if (index < Count && index >= 0)
+                    {
+                        return items[index];
+                    }
+                    else
+                    {
+                        Console.WriteLine("Index out of range.");
+                    return default(T);
+                    }
+
+
+                
+            }
+            set
+            {
+                items[index] = value;
+
+            }
+
+
+            
+        }
+
+
+
+
         //Constructor
         public CustomList()
         {
@@ -147,7 +180,16 @@ namespace CustomList
         public override string ToString()
         {
             //returns a single string that contains all items from array
-            return "";
+
+            var slice = items.Skip(0).Take(Count);
+
+
+
+            string separator = " ";
+
+            string result = String.Join(separator, slice);
+
+            return result;
         }
 
         public static CustomList<T> operator +(CustomList<T> firstList, CustomList<T> secondList)

@@ -12,6 +12,7 @@ namespace CustomList
         public T[] items;
         private int capacity;
         private int count;
+      
         public int Capacity
         {
             get
@@ -186,7 +187,7 @@ namespace CustomList
 
 
             string separator = " ";
-
+            
             string result = String.Join(separator, slice);
 
             return result;
@@ -195,16 +196,67 @@ namespace CustomList
         public static CustomList<T> operator +(CustomList<T> firstList, CustomList<T> secondList)
         {
             //returns a single CustomList<T> that contains all items from firstList and all items from secondList 
-            return null;
+
+            int newLength = firstList.Count + secondList.Count;
+
+            T[] result = new T[newLength];
+
+
+            if (firstList.Count > 0)
+            {
+
+
+                for (int i = 0; i < (firstList.Count); i++)
+                {
+                    result[i] = firstList[i];
+                }
+
+
+                if (secondList.Count > 0)
+                {
+
+
+                    for (int x = 0; x < (secondList.Count ); x++)
+                    {
+                        result[firstList.count + x] = secondList[x];
+                    }
+                }
+
+
+
+
+            } else if (secondList.Count > 0)
+            {
+
+
+                for (int x = 0; x < (secondList.Count - 1); x++)
+                {
+                    result[firstList.count + x] = secondList[x];
+                }
+            }
+           
+
+            CustomList<T> newResult = new CustomList<T>();
+            for (int y = 0; y < newLength; y++)
+            {
+                newResult.Add(result[y]);
+            }
+
+
+
+            return newResult;
         }
 
         public static CustomList<T> operator -(CustomList<T> firstList, CustomList<T> secondList)
         {
             //returns a single CustomList<T> with all items from firstList, EXCEPT any items that also appear in secondList
+
+
+
+
             return null;
         }
 
-        
        
         
 

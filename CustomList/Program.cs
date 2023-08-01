@@ -17,6 +17,21 @@
 
             Console.WriteLine($"{result}");
 
+            CustomList<string> yourList = new CustomList<string>();
+            yourList.Add("day");
+            yourList.Add("hello");
+
+            CustomList<string> fatima = yourList + myList;
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine($"{fatima[i]}");
+            }
+
+
+
+
+
         }
     }
 }

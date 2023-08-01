@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace CustomListTests;
 
-[TestClass()]
+[TestClass]
 public class ToStringTests
 {
-    [TestMethod()]
+    [TestMethod]
     public void ToString_ArrayOfStrings_AllItemsShouldBeReturnedInAString()
     {
         //Arrange
@@ -35,7 +35,7 @@ public class ToStringTests
 
 
 
-    [TestMethod()]
+    [TestMethod]
     public void ToString_ArrayOfNumbers_AllItemsShouldBeReturnedInAString()
     {
         //Arrange
@@ -61,7 +61,7 @@ public class ToStringTests
 
 
 
-    [TestMethod()]
+    [TestMethod]
     public void ToString_EmptyArray_ReturnEmptyString()
     {
         //Arrange

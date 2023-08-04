@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace CustomList
 {
     public class CustomList<T>
@@ -83,12 +84,8 @@ namespace CustomList
         //Member Methods (CAN DO)
         public void Add(T item)
         {
-            //'item' parameter should be added to internal 'items' array
-            //if items array is at capacity, double capacity and create new array
-            //transfer all items to new array
+           
 
-
-            //Count = items.Count;
             if (count >= Capacity)
             {
                 Capacity = capacity * 2;
@@ -115,10 +112,7 @@ namespace CustomList
 
         public bool Remove(T item)
         {
-            //If 'item' exists in the 'items' array, remove its first instance
-            //Any items coming after the removed item should be shifted down so there is no empty index.
-            //If 'item' was removed, return true. If no item was removed, return false.
-
+          
             int index = Array.IndexOf(items, item);
 
 
@@ -249,12 +243,69 @@ namespace CustomList
 
         public static CustomList<T> operator -(CustomList<T> firstList, CustomList<T> secondList)
         {
-            //returns a single CustomList<T> with all items from firstList, EXCEPT any items that also appear in secondList
+
+            CustomList<T> newResult = new CustomList<T>();
+            int newLength = firstList.Count;
+           
+
+
+            if (firstList.Count>0 && secondList.Count > 0)
+            {
+
+                for (int b = 0; b < firstList.Count; b++)
+                {
+                    newResult.Add(firstList.items[b]);
+                }
+                  
+
+                for (int i = 0; i < secondList.Count; i++)
+                {
+
+                    bool hasItem = firstList.items.Contains(secondList.items[i]);
+                    if (hasItem==true)
+
+
+                    {
+
+                        newResult.Remove(secondList.items[i]);
+                        
+
+                        
 
 
 
 
-            return null;
+                    }
+
+                }
+
+
+               
+
+              
+
+                
+
+
+
+
+
+
+
+            }
+
+
+
+
+
+
+
+            
+
+
+
+
+            return newResult;
         }
 
        

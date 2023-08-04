@@ -144,8 +144,7 @@ namespace CustomListTests
 
 
 
-        //Second list is longer than first list
-        // If one list is empty, result is unchanged
+      
 
     }
 }

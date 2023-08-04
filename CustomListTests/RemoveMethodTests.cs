@@ -141,7 +141,7 @@ namespace CustomListTests
             myList.Add(2);
             myList.Add(3);
             myList.Add(4);
-            myList.Add(2); //2 is reapeated here in the 4th index
+            myList.Add(2); 
             myList.Add(6);
             myList.Remove(2);
 
